@@ -25,5 +25,4 @@ else:
         else:
             print(" ### Eintritt Erwachsene (voller Preis) ### ")
             print(" Preis: ", preis_erwachsene, " Euro")
-            #huhu
 
