@@ -51,8 +51,11 @@ while weitere_karte == "j":
     print(" Möchten Sie noch eine weitere Karte berechnen? (j/n) ")
     weitere_karte = input()
 
-print(" Möchten die Erwachsenen ein Glas Sekt je 0,75 Euro dazu? (j/n) ")
-antwort_sekt = input()
+if erwachsene_gesamt > 0:
+    print(" Möchten die Erwachsenen ein Glas Sekt je 0,75 Euro dazu? (j/n) ")
+    antwort_sekt = input()
+else:
+    antwort_sekt = "n"
 
 if antwort_sekt == "j":
     print(" Wie viele von den", erwachsene_gesamt , " Erwachsenen möchten Sekt? ")
