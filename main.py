@@ -72,7 +72,6 @@ if erwachsene_gesamt > 0:
         gesamt_preis = gesamt_preis + sekt_preis_gesamt
     else:
         print(" Kein Sekt gewählt. ")
-        ## keine abfrage wie viel sekt
 
 print("Der Gesamtpreis beträgt: ", gesamt_preis, " Euro ")
 print("Viel Spaß!")
