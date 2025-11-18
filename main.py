@@ -74,6 +74,7 @@ if erwachsene_gesamt > 0:
                 print("Es werden nur", anzahl_sekt, " Sektgläser berechnet.")
             sekt_preis_gesamt = anzahl_sekt * glas_sekt_preis
             gesamt_preis = gesamt_preis + sekt_preis_gesamt
+            print(anzahl_sekt, " Sektgläser wurden zum Gesamtpreis hinzugefügt. ")
     else:
         print(" Kein Sekt gewählt. ")
 
