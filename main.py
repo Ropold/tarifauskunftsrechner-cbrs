@@ -62,14 +62,18 @@ if erwachsene_gesamt > 0:
     antwort_sekt = input()
 
     if antwort_sekt == "j":
-        print(" Wie viele von den", erwachsene_gesamt , " Erwachsenen möchten Sekt? ")
-        anzahl_sekt = int(input())
-        if anzahl_sekt > erwachsene_gesamt:
-            anzahl_sekt = erwachsene_gesamt
-            print("Man kann nur einen Sekt pro Erwachsenen nehmen")
-            print("Es werden nur", anzahl_sekt, " Sektgläser berechnet.")
-        sekt_preis_gesamt = anzahl_sekt * glas_sekt_preis
-        gesamt_preis = gesamt_preis + sekt_preis_gesamt
+        if erwachsene_gesamt == 1:
+            gesamt_preis = gesamt_preis + 0.75
+            print(" Ein Sektglas wurde zum Gesamtpreis hinzugefügt. ")
+        else:
+            print(" Wie viele von den", erwachsene_gesamt , " Erwachsenen möchten Sekt? ")
+            anzahl_sekt = int(input())
+            if anzahl_sekt > erwachsene_gesamt:
+                anzahl_sekt = erwachsene_gesamt
+                print("Man kann nur einen Sekt pro Erwachsenen nehmen")
+                print("Es werden nur", anzahl_sekt, " Sektgläser berechnet.")
+            sekt_preis_gesamt = anzahl_sekt * glas_sekt_preis
+            gesamt_preis = gesamt_preis + sekt_preis_gesamt
     else:
         print(" Kein Sekt gewählt. ")
 
