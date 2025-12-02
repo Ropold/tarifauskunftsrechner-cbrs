@@ -19,7 +19,7 @@ def tarif_abfragen():
         print(" Preis: ", preis_kinder, " Euro ")
         gesamt_preis = gesamt_preis + preis_kinder
 
-    elif 14 <= alter_gast <= 17:
+    elif alter_gast <= 17:
         print(" ### Eintritt Jugendliche ### ")
         print(" Preis: ", preis_jugendlich, " Euro ")
         gesamt_preis = gesamt_preis + preis_jugendlich
