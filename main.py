@@ -47,6 +47,31 @@ def tarif_abfragen():
             gesamt_preis = gesamt_preis + preis_erwachsene
 
 
+def sekt_abfragen():
+    global gesamt_preis
+
+    if erwachsene_gesamt > 0:
+        print(" Möchten die Erwachsenen ein Glas Sekt je 0,75 Euro dazu? (j/n) ")
+        antwort_sekt = input()
+
+        if antwort_sekt == "j":
+            if erwachsene_gesamt == 1:
+                gesamt_preis = gesamt_preis + 0.75
+                print(" Ein Sektglas wurde zum Gesamtpreis hinzugefügt. ")
+            else:
+                print(" Wie viele von den", erwachsene_gesamt , " Erwachsenen möchten Sekt? ")
+                anzahl_sekt = int(input())
+                if anzahl_sekt > erwachsene_gesamt:
+                    anzahl_sekt = erwachsene_gesamt
+                    print("Man kann nur einen Sekt pro Erwachsenen nehmen")
+                    print("Es werden nur", anzahl_sekt, " Sektgläser berechnet.")
+                sekt_preis_gesamt = anzahl_sekt * glas_sekt_preis
+                gesamt_preis = gesamt_preis + sekt_preis_gesamt
+                print(anzahl_sekt, " Sektgläser wurden zum Gesamtpreis hinzugefügt. ")
+        else:
+            print(" Kein Sekt gewählt. ")
+
+
 print(" ### Tarifauskunftsrechner Museum XXX ### ")
 tarif_abfragen()
 
@@ -57,26 +82,7 @@ while weitere_karte == "j":
     print(" Möchten Sie noch eine weitere Karte berechnen? (j/n) ")
     weitere_karte = input()
 
-if erwachsene_gesamt > 0:
-    print(" Möchten die Erwachsenen ein Glas Sekt je 0,75 Euro dazu? (j/n) ")
-    antwort_sekt = input()
-
-    if antwort_sekt == "j":
-        if erwachsene_gesamt == 1:
-            gesamt_preis = gesamt_preis + 0.75
-            print(" Ein Sektglas wurde zum Gesamtpreis hinzugefügt. ")
-        else:
-            print(" Wie viele von den", erwachsene_gesamt , " Erwachsenen möchten Sekt? ")
-            anzahl_sekt = int(input())
-            if anzahl_sekt > erwachsene_gesamt:
-                anzahl_sekt = erwachsene_gesamt
-                print("Man kann nur einen Sekt pro Erwachsenen nehmen")
-                print("Es werden nur", anzahl_sekt, " Sektgläser berechnet.")
-            sekt_preis_gesamt = anzahl_sekt * glas_sekt_preis
-            gesamt_preis = gesamt_preis + sekt_preis_gesamt
-            print(anzahl_sekt, " Sektgläser wurden zum Gesamtpreis hinzugefügt. ")
-    else:
-        print(" Kein Sekt gewählt. ")
+sekt_abfragen()
 
 print("Der Gesamtpreis beträgt: ", gesamt_preis, " Euro ")
 print("Viel Spaß!")
